@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harry Slowly Coffee Stand | ハリースローリー</title>
+  <meta name="description" content="長崎市グラバー園出口から30秒。小さなハリネズミのハリーがゆっくりと美味しいコーヒーをお届けします。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=M+PLUS+Rounded+1c:wght@300;400;500&family=Nunito:wght@300;400;600&family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FDFAF4;
+      --warm-white: #FFFFFF;
+      --brown: #8B7355;
+      --brown-light: #B89E7A;
+      --brown-dark: #5C4A2A;
+      --green: #7A9E7E;
+      --text: #3D3028;
+      --text-light: #9B8B7A;
+      --border: #E8DFD0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'M PLUS Rounded 1c', 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(253, 250, 244, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+    }
+
+    .nav-logo {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: var(--brown-dark);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--brown); }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      background: var(--border);
+      border-radius: 20px;
+      padding: 3px;
+      gap: 0;
+    }
+
+    .lang-toggle span {
+      padding: 5px 13px;
+      border-radius: 16px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+      color: var(--text-light);
+      user-select: none;
+    }
+
+    .lang-toggle span.active {
+      background: var(--brown);
+      color: white;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 24px 60px;
+      background: linear-gradient(160deg, #FDFAF4 60%, #F0E8D8 100%);
+    }
+
+    .hero-logo-wrap {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 8px 40px rgba(139, 115, 85, 0.15);
+      margin: 0 auto 36px;
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    .hero-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transform: scale(1.18);
+      transform-origin: center center;
+    }
+
+    .hero-logo-placeholder {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 8px 40px rgba(139, 115, 85, 0.15);
+      margin-bottom: 36px;
+      border: 4px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      font-weight: 700;
+      color: var(--brown-dark);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .hero .subtitle {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      font-size: 0.95rem;
+      color: var(--brown-light);
+      letter-spacing: 0.18em;
+      margin-bottom: 20px;
+    }
+
+    .hero .tagline {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      letter-spacing: 0.04em;
+      max-width: 340px;
+      line-height: 2;
+    }
+
+    .hero .tagline em {
+      font-style: italic;
+      font-family: 'Caveat', cursive;
+      font-size: 1.05rem;
+      color: var(--green);
+    }
+
+    .scroll-hint {
+      margin-top: 48px;
+      color: var(--brown-light);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* ─── SECTIONS ─── */
+    section {
+      padding: 80px 24px;
+    }
+
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: 'Zen Maru Gothic', 'Caveat', cursive;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: var(--brown-dark);
+      line-height: 1.3;
+      margin-bottom: 32px;
+    }
+
+    /* ─── ABOUT ─── */
+    .about { background: white; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 2;
+      margin-bottom: 16px;
+    }
+
+    .about-card {
+      background: var(--cream);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+
+    .about-card .hedgehog { font-size: 4rem; margin-bottom: 16px; }
+
+    .about-card p {
+      font-family: 'Caveat', cursive;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--brown);
+      line-height: 1.8;
+    }
+
+    /* ─── INFO ─── */
+    .info { background: var(--cream); }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 8px;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px 24px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .info-card .icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .info-card .label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .info-card .value {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ─── MENU ─── */
+    .menu { background: var(--cream); }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(139, 115, 85, 0.12);
+    }
+
+    .menu-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .menu-card-info {
+      padding: 16px 18px 18px;
+    }
+
+    .menu-card-name {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--brown-dark);
+      margin-bottom: 4px;
+    }
+
+    .menu-card-name-en {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+
+    .menu-card-price {
+      font-family: 'Caveat', cursive;
+      font-size: 1.1rem;
+      color: var(--brown);
+      font-weight: 600;
+    }
+
+    /* ─── MENU LIST ─── */
+    .menu-list {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .menu-category {
+      background: white;
+      border-radius: 20px;
+      padding: 28px 24px;
+      border: 1px solid var(--border);
+    }
+
+    .menu-cat-title {
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 7px 0;
+      border-bottom: 1px dotted var(--border);
+      gap: 12px;
+    }
+
+    .menu-item:last-child { border-bottom: none; }
+
+    .menu-item-name {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .menu-item-sub {
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    .menu-item-price {
+      font-family: 'Caveat', cursive;
+      font-size: 1.05rem;
+      color: var(--brown);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .menu-note {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+
+    /* ─── ABOUT PHOTO ─── */
+    .about-photo {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(139, 115, 85, 0.08);
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 700px) {
+      .menu-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 420px) {
+      .menu-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── INSTAGRAM ─── */
+    .instagram { background: white; }
+
+    .insta-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .insta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: white;
+      text-decoration: none;
+      padding: 10px 22px;
+      border-radius: 24px;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      transition: opacity 0.2s;
+    }
+
+    .insta-link:hover { opacity: 0.85; }
+
+    .insta-feed {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .insta-post {
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--cream);
+      aspect-ratio: 1 / 1;
+    }
+
+    .insta-post a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .insta-post-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .insta-post:hover .insta-post-img {
+      transform: scale(1.06);
+    }
+
+    .insta-note {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+
+    /* ─── MAP ─── */
+    .access { background: var(--cream); }
+
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .access-info p {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 2;
+      margin-bottom: 8px;
+    }
+
+    .access-info strong { color: var(--brown-dark); }
+
+    .map-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(139, 115, 85, 0.08);
+    }
+
+    .map-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 320px;
+      border: none;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--brown-dark);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 48px 24px;
+    }
+
+    footer .footer-logo {
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    footer .footer-sub {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      opacity: 0.6;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.8rem;
+      margin: 0 12px;
+      transition: color 0.2s;
+    }
+
+    footer a:hover { color: white; }
+
+    footer .copy {
+      margin-top: 28px;
+      font-size: 0.72rem;
+      opacity: 0.4;
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--border);
+      margin: 8px 0 48px;
+      letter-spacing: 0.5em;
+    }
+
+    /* ─── HAMBURGER ─── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+      border-radius: 8px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--brown-dark);
+      border-radius: 2px;
+      transition: all 0.25s ease;
+      transform-origin: center;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* モバイルメニュードロワー */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(253, 250, 244, 0.98);
+      backdrop-filter: blur(12px);
+      z-index: 99;
+      padding-top: 70px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+    }
+
+    .mobile-menu.open {
+      transform: translateY(0);
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-menu ul li a {
+      display: block;
+      padding: 16px 28px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid var(--border);
+      min-height: 44px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .mobile-menu ul li a:active {
+      background: var(--cream);
+    }
+
+    .mobile-menu-lang {
+      padding: 20px 28px 0;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu { display: block; }
+
+      .about-grid,
+      .access-grid { grid-template-columns: 1fr; gap: 32px; }
+
+      .insta-feed { grid-template-columns: repeat(2, 1fr); }
+
+      section { padding: 56px 18px; }
+
+      .hero { padding: 90px 18px 52px; }
+
+      .hero-logo-wrap {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 28px;
+      }
+
+      .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
+
+      .hero .tagline { font-size: 0.88rem; }
+
+      .section-title { font-size: clamp(1.5rem, 5vw, 2.2rem); margin-bottom: 24px; }
+
+      .about-text p { font-size: 0.92rem; }
+
+      .access-info p { font-size: 0.88rem; }
+
+      .info-grid { grid-template-columns: 1fr 1fr; }
+
+      .menu-grid { grid-template-columns: repeat(2, 1fr); }
+      .menu-list { grid-template-columns: 1fr; }
+
+      .insta-header { flex-direction: column; align-items: flex-start; }
+
+      .insta-link { min-height: 44px; }
+
+      .map-wrap iframe { height: 260px; }
+
+      img { max-width: 100%; }
+    }
+
+    @media (max-width: 420px) {
+      .insta-feed { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
+      .menu-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── LANG TOGGLE ─── */
+    [data-en] { display: none; }
+    body.en [data-ja] { display: none; }
+    body.en [data-en] { display: revert; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <a class="nav-logo" href="#top">Harry Slowly</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#instagram">Instagram</a></li>
+      <li><a href="#access">Access</a></li>
+      <li>
+        <div class="lang-toggle">
+          <span class="active" onclick="setLang('ja', this)">JP</span>
+          <span onclick="setLang('en', this)">EN</span>
+        </div>
+      </li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#menu" class="mobile-nav-link">Menu</a></li>
+      <li><a href="#instagram" class="mobile-nav-link">Instagram</a></li>
+      <li><a href="#access" class="mobile-nav-link">Access</a></li>
+    </ul>
+    <div class="mobile-menu-lang">
+      <div class="lang-toggle" id="mobileLangToggle">
+        <span class="active" onclick="setLang('ja', this)">JP</span>
+        <span onclick="setLang('en', this)">EN</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="top">
+    <div class="hero-logo-wrap">
+      <img class="hero-logo" src="logo.png" alt="Harry Slowly Logo"
+        onerror="this.parentElement.style.display='none';document.getElementById('logo-fallback').style.display='flex'">
+    </div>
+    <div class="hero-logo-placeholder" id="logo-fallback" style="display:none">🦔</div>
+    <h1>Harry Slowly<br>Coffee Stand.</h1>
+    <p class="subtitle">ハリースローリー</p>
+    <p class="tagline" data-ja>
+      小さなハリネズミのハリーとスローリーが<br>
+      美味しい珈琲をお届けしようと<br>
+      頑張る姿をイメージした小さなコーヒースタンドです。<br><br>
+      <em>"Hurry! its time to enjoy a coffee slowly."</em>
+    </p>
+    <p class="tagline" data-en>
+      A small coffee stand inspired by the image of<br>
+      tiny hedgehogs Harry &amp; Slowly,<br>
+      working hard to bring you delicious coffee.<br><br>
+      <em>"Hurry! its time to enjoy a coffee slowly."</em>
+    </p>
+    <p class="scroll-hint">↓ scroll</p>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <span class="section-label">Our Story</span>
+      <h2 class="section-title" data-ja>ハリー＆スローリーについて</h2>
+      <h2 class="section-title" data-en>About Harry &amp; Slowly</h2>
+      <div class="divider">· · ·</div>
+
+      <div class="about-grid" style="align-items: start;">
+        <div>
+          <div class="about-text">
+            <p data-ja>
+              長崎市グラバー園のすぐそばにある、小さなコーヒースタンドです。
+              小さなハリネズミのハリーとスローリーが、美味しいコーヒーをお届けしようと毎日頑張っています。
+            </p>
+            <p data-en>
+              A small coffee stand nestled just 30 seconds from the exit of Glover Garden in Nagasaki.
+              Harry the hedgehog works hard every day to bring you a warm, delicious cup.
+            </p>
+            <p data-ja>
+              あわただしい観光の合間に、ほっと一息。<br>
+              ゆっくりコーヒーを楽しむ時間をご提供します。
+            </p>
+            <p data-en>
+              Take a breath between sightseeing.<br>
+              We're here to give you a moment to slow down and enjoy.
+            </p>
+          </div>
+          <div class="about-photo" style="margin-top: 20px;">
+            <img src="3A73B1B3-6B20-4D50-AC34-1C9D5D026838.png" alt="店内のハリネズミフィギュア" style="height: auto;">
+          </div>
+        </div>
+
+        <div class="about-photo">
+          <img src="0D02200C-10B1-416A-9B31-EEF137E9B018.png" alt="Harry Slowly Coffee Stand 外観" style="height: auto;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INFO ── -->
+  <section class="info">
+    <div class="section-inner">
+      <span class="section-label">Information</span>
+      <h2 class="section-title" data-ja>営業情報</h2>
+      <h2 class="section-title" data-en>Shop Info</h2>
+      <div class="divider">· · ·</div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="icon">🕐</div>
+          <div class="label" data-ja>営業時間</div>
+          <div class="label" data-en>Hours</div>
+          <div class="value">11:00 – 17:00</div>
+        </div>
+        <div class="info-card">
+          <div class="icon">📍</div>
+          <div class="label" data-ja>場所</div>
+          <div class="label" data-en>Location</div>
+          <div class="value" data-ja>長崎市<br>グラバー園出口から30秒</div>
+          <div class="value" data-en>Nagasaki<br>30 sec from Glover Garden Exit</div>
+        </div>
+        <div class="info-card">
+          <div class="icon">📸</div>
+          <div class="label">Instagram</div>
+          <div class="value"><a href="https://www.instagram.com/harryslowly" target="_blank" style="color:var(--brown); text-decoration:none;">@harryslowly</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MENU ── -->
+  <section class="menu" id="menu">
+    <div class="section-inner">
+      <span class="section-label">Menu</span>
+      <h2 class="section-title" data-ja>メニュー</h2>
+      <h2 class="section-title" data-en>Menu</h2>
+      <div class="divider">· · ·</div>
+
+      <!-- 写真ハイライト -->
+      <div class="menu-grid">
+        <div class="menu-card">
+          <img src="IMG_7844.JPG" alt="ドリップコーヒー">
+          <div class="menu-card-info">
+            <p class="menu-card-name" data-ja>ドリップコーヒー</p>
+            <p class="menu-card-name" data-en>Drip Coffee</p>
+            <p class="menu-card-price">¥500</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="IMG_7845.JPG" alt="カフェラテ" style="object-position: center bottom;">
+          <div class="menu-card-info">
+            <p class="menu-card-name" data-ja>カフェラテ</p>
+            <p class="menu-card-name" data-en>Cafe Latte</p>
+            <p class="menu-card-price">¥550</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="affogato_new.jpg" alt="コールドアフォガート">
+          <div class="menu-card-info">
+            <p class="menu-card-name" data-ja>コールドアフォガート</p>
+            <p class="menu-card-name" data-en>Cold Affogato</p>
+            <p class="menu-card-price">¥450</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="IMG_7849.JPG" alt="アメリカーノ">
+          <div class="menu-card-info">
+            <p class="menu-card-name" data-ja>アメリカーノ</p>
+            <p class="menu-card-name" data-en>Americano</p>
+            <p class="menu-card-price">¥500</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="tiramisu_new.jpg" alt="長崎カスティラミス">
+          <div class="menu-card-info">
+            <p class="menu-card-name" data-ja>長崎カスティラミス</p>
+            <p class="menu-card-name" data-en>Nagasaki Castiramisu</p>
+            <p class="menu-card-price">¥450</p>
+          </div>
+        </div>
+        <div class="menu-card">
+          <img src="C8D26F48-9B61-4229-9790-9FF045F60910.jpg" alt="カプチーノ">
+          <div class="menu-card-info">
+            <p class="menu-card-name" data-ja>カプチーノ</p>
+            <p class="menu-card-name" data-en>Cappuccino</p>
+            <p class="menu-card-price">¥550</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- フルメニューリスト -->
+      <div class="menu-list">
+
+        <!-- Coffee -->
+        <div class="menu-category">
+          <h3 class="menu-cat-title">Coffee</h3>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>ドリップコーヒー　Harry（ビターブレンド）/ Slowly（マイルドブレンド）</p><p class="menu-item-name" data-en>Drip Coffee　Harry (Bitter) / Slowly (Mild)</p></div><p class="menu-item-price">¥500</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>エスプレッソ</p><p class="menu-item-name" data-en>Espresso</p></div><p class="menu-item-price">¥500</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>アメリカーノ（HOT/ICE）</p><p class="menu-item-name" data-en>Americano (HOT/ICE)</p></div><p class="menu-item-price">¥500</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>カフェラテ（HOT/ICE）</p><p class="menu-item-name" data-en>Cafe Latte (HOT/ICE)</p></div><p class="menu-item-price">¥550</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>カプチーノ</p><p class="menu-item-name" data-en>Cappuccino</p></div><p class="menu-item-price">¥550</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>カフェモカ（HOT/ICE）</p><p class="menu-item-name" data-en>Cafe Mocha (HOT/ICE)</p></div><p class="menu-item-price">¥600</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>エスプレッソトニック</p><p class="menu-item-name" data-en>Espresso Tonic</p></div><p class="menu-item-price">¥600</p></div>
+        </div>
+
+        <!-- Tea -->
+        <div class="menu-category">
+          <h3 class="menu-cat-title">Tea</h3>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>抹茶ラテ（HOT/ICE）</p><p class="menu-item-name" data-en>Matcha Latte (HOT/ICE)</p></div><p class="menu-item-price">¥550</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>長崎そのぎ茶（HOT/ICE）</p><p class="menu-item-name" data-en>Nagasaki Green Tea (HOT/ICE)</p></div><p class="menu-item-price">¥400</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>長崎和紅茶（HOTのみ）</p><p class="menu-item-name" data-en>Nagasaki Black Tea (HOT only)</p></div><p class="menu-item-price">¥400</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>アイスティー</p><p class="menu-item-name" data-en>Iced Black Tea</p></div><p class="menu-item-price">¥400</p></div>
+        </div>
+
+        <!-- Others -->
+        <div class="menu-category">
+          <h3 class="menu-cat-title">Others</h3>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>クラフトジンジャーエール</p><p class="menu-item-name" data-en>Craft Ginger Ale</p></div><p class="menu-item-price">¥500</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>ホットジンジャー</p><p class="menu-item-name" data-en>Hot Ginger</p></div><p class="menu-item-price">¥500</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>チョコレートミルク（HOT/ICE）</p><p class="menu-item-name" data-en>Chocolate Milk (HOT/ICE)</p></div><p class="menu-item-price">¥500</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>長崎県産牛乳（HOT/ICE）</p><p class="menu-item-name" data-en>Milk (HOT/ICE)</p></div><p class="menu-item-price">¥250</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>豆乳（HOT/ICE）</p><p class="menu-item-name" data-en>Soy Milk (HOT/ICE)</p></div><p class="menu-item-price">¥250</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>昔ながらのつぶつぶオレンジ</p><p class="menu-item-name" data-en>Orange Juice</p></div><p class="menu-item-price">¥350</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>アップルジュース</p><p class="menu-item-name" data-en>Apple Juice</p></div><p class="menu-item-price">¥250</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>グレープジュース</p><p class="menu-item-name" data-en>Grapes Juice</p></div><p class="menu-item-price">¥250</p></div>
+        </div>
+
+        <!-- Sweets & Toppings -->
+        <div class="menu-category">
+          <h3 class="menu-cat-title">Sweets</h3>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>チュロス</p><p class="menu-item-name" data-en>Churros</p></div><p class="menu-item-price">¥300</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>アップルパイ（HOT/ICE）</p><p class="menu-item-name" data-en>Apple Pie (HOT/ICE)</p></div><p class="menu-item-price">¥400</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>長崎カスティラミス</p><p class="menu-item-name" data-en>Nagasaki Castiramisu</p></div><p class="menu-item-price">¥450</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>コールドアフォガート</p><p class="menu-item-name" data-en>Cold Affogato</p></div><p class="menu-item-price">¥450</p></div>
+          <h3 class="menu-cat-title" style="margin-top:20px">For Drinks</h3>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>豆乳変更・追加</p><p class="menu-item-name" data-en>Change/Add Soy Milk</p></div><p class="menu-item-price">¥0</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>アーモンドミルク変更・追加</p><p class="menu-item-name" data-en>Change/Add Almond Milk</p></div><p class="menu-item-price">¥150</p></div>
+          <div class="menu-item"><div><p class="menu-item-name" data-ja>アイスクリーム追加</p><p class="menu-item-name" data-en>Add Ice Cream</p></div><p class="menu-item-price">¥150</p></div>
+        </div>
+
+      </div>
+
+      <p class="insta-note" style="margin-top:32px" data-ja>※ メニューや価格は変更になる場合があります</p>
+      <p class="insta-note" style="margin-top:32px" data-en>※ Menu and prices are subject to change</p>
+    </div>
+  </section>
+
+  <!-- ── INSTAGRAM ── -->
+  <section class="instagram" id="instagram">
+    <div class="section-inner">
+      <div class="insta-header">
+        <div>
+          <span class="section-label">Instagram</span>
+          <h2 class="section-title" style="margin-bottom:0" data-ja>最新の投稿</h2>
+          <h2 class="section-title" style="margin-bottom:0" data-en>Latest Posts</h2>
+        </div>
+        <a class="insta-link" href="https://www.instagram.com/harryslowly" target="_blank">
+          ▶ @harryslowly
+        </a>
+      </div>
+
+      <div class="insta-feed">
+        <div class="insta-post">
+          <a href="https://www.instagram.com/harryslowly" target="_blank">
+            <img class="insta-post-img" src="IMG_7840.JPG" alt="Harry Slowly Instagram">
+          </a>
+        </div>
+        <div class="insta-post">
+          <a href="https://www.instagram.com/harryslowly" target="_blank">
+            <img class="insta-post-img" src="IMG_7842.JPG" alt="Harry Slowly Instagram">
+          </a>
+        </div>
+        <div class="insta-post">
+          <a href="https://www.instagram.com/harryslowly" target="_blank">
+            <img class="insta-post-img" src="IMG_7852.JPG" alt="Harry Slowly Instagram">
+          </a>
+        </div>
+        <div class="insta-post">
+          <a href="https://www.instagram.com/harryslowly" target="_blank">
+            <img class="insta-post-img" src="IMG_7844.JPG" alt="Harry Slowly Instagram">
+          </a>
+        </div>
+        <div class="insta-post">
+          <a href="https://www.instagram.com/harryslowly" target="_blank">
+            <img class="insta-post-img" src="IMG_7845.JPG" alt="Harry Slowly Instagram">
+          </a>
+        </div>
+        <div class="insta-post">
+          <a href="https://www.instagram.com/harryslowly" target="_blank">
+            <img class="insta-post-img" src="IMG_7851.JPG" alt="Harry Slowly Instagram">
+          </a>
+        </div>
+      </div>
+
+      <p class="insta-note" data-ja>最新の写真は <a href="https://www.instagram.com/harryslowly" target="_blank" style="color:var(--brown)">Instagram @harryslowly</a> でチェック！</p>
+      <p class="insta-note" data-en>Check our latest photos on <a href="https://www.instagram.com/harryslowly" target="_blank" style="color:var(--brown)">Instagram @harryslowly</a>!</p>
+    </div>
+  </section>
+
+  <!-- ── ACCESS ── -->
+  <section class="access" id="access">
+    <div class="section-inner">
+      <span class="section-label">Access</span>
+      <h2 class="section-title" data-ja>アクセス</h2>
+      <h2 class="section-title" data-en>How to Find Us</h2>
+      <div class="divider">· · ·</div>
+
+      <div class="access-grid">
+        <div class="access-info">
+          <p><strong data-ja>📍 場所</strong><strong data-en>📍 Location</strong><br>
+            <span data-ja>長崎市 グラバー園出口から30秒</span>
+            <span data-en>30 seconds from Glover Garden Exit, Nagasaki</span>
+          </p>
+          <p><strong data-ja>🕐 営業時間</strong><strong data-en>🕐 Hours</strong><br>
+            11:00 – 17:00
+          </p>
+          <p data-ja><strong>🚶 アクセス方法</strong><br>
+            グラバー園を出てすぐ。<br>
+            長崎観光の合間にどうぞ！
+          </p>
+          <p data-en><strong>🚶 Directions</strong><br>
+            Right at the exit of Glover Garden.<br>
+            Perfect for a break during sightseeing!
+          </p>
+        </div>
+
+        <div class="map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?q=グラバー園,長崎市&output=embed&hl=ja"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-logo">Harry Slowly Coffee Stand.</div>
+    <div class="footer-sub">ハリースローリー · 長崎</div>
+    <div>
+      <a href="https://www.instagram.com/harryslowly" target="_blank">Instagram</a>
+    </div>
+    <p class="copy">© 2024 Harry Slowly Coffee Stand. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ─── 言語切り替え ───
+    function setLang(lang, el) {
+      document.body.classList.toggle('en', lang === 'en');
+      // すべてのlang-toggle内のspanを同期
+      const isEn = lang === 'en';
+      document.querySelectorAll('.lang-toggle').forEach(toggle => {
+        toggle.querySelectorAll('span').forEach((s, i) => {
+          s.classList.toggle('active', isEn ? i === 1 : i === 0);
+        });
+      });
+    }
+
+    // ─── ハンバーガーメニュー ───
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    // モバイルメニューのリンクをタップしたら閉じる
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // ─── スムーズスクロール ───
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+
+</body>
+</html>
